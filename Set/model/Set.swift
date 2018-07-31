@@ -8,21 +8,46 @@
 
 import Foundation
 
-
-
 class Set {
     private var cards: [Card]
     private(set) var cardsInPlay: [Card]
     private(set) var selected: [Card]
 
 
-    func select(card at: Int) -> Bool {
-        if at < 0 || at >= cardsInPlay.count {
+    func dealCards() {
+        if cards.count == 0 {
+            return
+        }
+
+        var index = 0
+        while index < 3 || index < cards.count {
+            let card = cards.removeFirst()
+            cardsInPlay.append(card)
+            index += 1
+        }
+    }
+
+
+    private func replace() {
+        if !doFormSet() {
+            return
+        }
+
+        for card in selected {
+            let cardIndex = cardsInPlay.index(of: card)
+            cardsInPlay.remove(at: cardIndex!)
+        }
+
+        dealCards()
+    }
+
+    func select(card: Card) -> Bool {
+        if !cardsInPlay.contains(card) {
             return false
         }
 
-        let card = cardsInPlay[at]
         if selected.count == 3 {
+            replace()
             selected = []
         }
 
@@ -30,7 +55,7 @@ class Set {
         return true
     }
 
-    private func doFormSet() -> Bool {
+    func doFormSet() -> Bool {
         if selected.count != 3 {
             return false
         }

@@ -12,15 +12,34 @@ class ViewController: UIViewController {
 
     var game = Set()
 
+    var selected: [UIButton] = []
+
+    @IBAction func selectCard(_ sender: UIButton) {
+        if selected.count == 3{
+            //do something
+        }
+        else if selected.contains(sender){
+            let buttonIndex = selected.index(of: sender)!
+            selected.remove(at: buttonIndex)
+            sender.layer.borderWidth = 0.0
+            sender.layer.borderColor = UIColor.blue.cgColor
+        } else {
+            selected.append(sender)
+            sender.layer.borderWidth = 3.0
+            sender.layer.borderColor = UIColor.blue.cgColor
+        }
+        
+        print("selected")
+        
+    }
+    
+    
+    
+
     @IBOutlet var cards: [UIButton]!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGame()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     private func set(button at: Int) {
@@ -55,7 +74,7 @@ class ViewController: UIViewController {
             case .Solid:
                 return [.foregroundColor: color]
             case .Striped:
-                return [.foregroundColor: color.withAlphaComponent(CGFloat(0.50))]
+                return [.foregroundColor: color.withAlphaComponent(CGFloat(0.25))]
             case .Open:
                 return [.foregroundColor: color,
                         .strokeWidth: 15]
