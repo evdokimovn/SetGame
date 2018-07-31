@@ -12,6 +12,8 @@
 		FD2AFDBD2104EE0C0049540C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD2AFDBB2104EE0C0049540C /* Main.storyboard */; };
 		FD2AFDBF2104EE0E0049540C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD2AFDBE2104EE0E0049540C /* Assets.xcassets */; };
 		FD2AFDC22104EE0E0049540C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD2AFDC02104EE0E0049540C /* LaunchScreen.storyboard */; };
+		FD2AFDCA2104F53E0049540C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2AFDC92104F53E0049540C /* Card.swift */; };
+		FD2FEA112104F749005058F4 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2FEA102104F749005058F4 /* Set.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		FD2AFDBE2104EE0E0049540C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD2AFDC12104EE0E0049540C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD2AFDC32104EE0E0049540C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD2AFDC92104F53E0049540C /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		FD2FEA102104F749005058F4 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 		FD2AFDB62104EE0C0049540C /* Set */ = {
 			isa = PBXGroup;
 			children = (
+				FD2AFDCB2104F5430049540C /* model */,
 				FD2AFDB72104EE0C0049540C /* AppDelegate.swift */,
 				FD2AFDB92104EE0C0049540C /* ViewController.swift */,
 				FD2AFDBB2104EE0C0049540C /* Main.storyboard */,
@@ -62,6 +67,15 @@
 				FD2AFDC32104EE0E0049540C /* Info.plist */,
 			);
 			path = Set;
+			sourceTree = "<group>";
+		};
+		FD2AFDCB2104F5430049540C /* model */ = {
+			isa = PBXGroup;
+			children = (
+				FD2AFDC92104F53E0049540C /* Card.swift */,
+				FD2FEA102104F749005058F4 /* Set.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +149,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD2FEA112104F749005058F4 /* Set.swift in Sources */,
 				FD2AFDBA2104EE0C0049540C /* ViewController.swift in Sources */,
+				FD2AFDCA2104F53E0049540C /* Card.swift in Sources */,
 				FD2AFDB82104EE0C0049540C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
