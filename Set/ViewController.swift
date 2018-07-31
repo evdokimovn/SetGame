@@ -16,6 +16,7 @@ class ViewController: UIViewController {
 
     @IBOutlet var cardButtons: [UIButton]!
     @IBOutlet weak var newGameButton: UIButton!
+    // “Deal 3 More Cards” button (as per the rules of Set).
     @IBOutlet weak var dealCardsButton: UIButton!
 
     @IBAction func dealMoreCards(_ sender: UIButton) {
@@ -32,16 +33,7 @@ class ViewController: UIViewController {
             game.dealCards()
         }
 
-
-
-
-        setupGame()
-        print(cardsForButtons.count)
-        if (game.hasMoreCards() && cardsForButtons.count < 24) || (game.doFormSet() && selected.count == 3) {
-            dealCardsButton.isHidden = false
-        } else {
-            dealCardsButton.isHidden = true
-        }
+        updateUI()
     }
 
     @IBAction func startNewGame(_ sender: UIButton) {
@@ -50,7 +42,7 @@ class ViewController: UIViewController {
         selected = []
         cardsForButtons = [:]
         game = Set()
-        setupGame()
+        updateUI()
     }
 
 
@@ -62,29 +54,27 @@ class ViewController: UIViewController {
         }
     }
 
+
+    // Allow the user to select cards to try to match as a Set by touching on the cards
     @IBAction func selectCard(_ sender: UIButton) {
+        //When any card is chosen
         if selected.count == 3 {
             for button in selected {
                 button.layer.borderWidth = 0.0
             }
             selected = []
+            //and there are already 3 non-matching Set cards selected, deselect those 3 non-matching cards and then select the chosen card.
             if !game.doFormSet() {
                 markAs(selected: sender)
+                // and there are already 3 matching Set cards selected, replace those 3 matching Set cards with new ones from the deck
             } else {
                 game.replace()
-                setupGame()
             }
         } else {
-            if selected.contains(sender) {
-                let buttonIndex = selected.index(of: sender)!
-                selected.remove(at: buttonIndex)
-                sender.layer.borderWidth = 0.0
-                sender.layer.borderColor = UIColor.blue.cgColor
-            } else {
-                markAs(selected: sender)
-            }
+            markAs(selected: sender)
         }
 
+        // After 3 cards have been selected, you must indicate whether those 3 cards are a match or a mismatch (per Set rules).
         if selected.count == 3 {
             for button in selected {
                 let card = cardsForButtons[button]!
@@ -96,28 +86,26 @@ class ViewController: UIViewController {
                 }
             }
         }
-
-        if game.cardsInPlay.count == 0 {
-            finishGame()
-        }
-
-        if (game.hasMoreCards() && cardsForButtons.count < 24) || (game.doFormSet() && selected.count == 3) {
-            dealCardsButton.isHidden = false
-        } else {
-            dealCardsButton.isHidden = true
-        }
+        updateUI()
     }
 
     private func markAs(selected button: UIButton) {
-        selected.append(button)
-        button.layer.borderWidth = 3.0
-        button.layer.borderColor = UIColor.blue.cgColor
+        if selected.contains(button) {
+            let buttonIndex = selected.index(of: button)!
+            selected.remove(at: buttonIndex)
+            button.layer.borderWidth = 0.0
+            button.layer.borderColor = UIColor.blue.cgColor }
+        else {
+            selected.append(button)
+            button.layer.borderWidth = 3.0
+            button.layer.borderColor = UIColor.blue.cgColor
+        }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         newGameButton.isHidden = true
-        setupGame()
+        updateUI()
     }
 
     private func setForButton(card: Card) {
@@ -179,7 +167,7 @@ class ViewController: UIViewController {
         button.setAttributedTitle(cardAttributedString, for: .normal)
     }
 
-    private func setupGame() {
+    private func updateUI() {
         var cards: [Card] = []
         for (button, card) in cardsForButtons {
             if !game.cardsInPlay.contains(card) {
@@ -202,6 +190,16 @@ class ViewController: UIViewController {
                 drawCard(on: button)
                 button.isHidden = false
             }
+        }
+
+        if (game.hasMoreCards() && cardsForButtons.count < 24) || (game.doFormSet() && selected.count == 3) {
+            dealCardsButton.isHidden = false
+        } else {
+            dealCardsButton.isHidden = true
+        }
+
+        if game.cardsInPlay.count == 0 {
+            finishGame()
         }
     }
 }

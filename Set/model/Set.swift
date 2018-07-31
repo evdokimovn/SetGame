@@ -31,9 +31,9 @@ class Set {
         return cards.count > 0
     }
 
-    func replace() {
+    func replace() -> Bool {
         if !doFormSet() {
-            return
+            return false
         }
 
         for card in selected {
@@ -42,6 +42,7 @@ class Set {
         }
 
         dealCards()
+        return true
     }
 
     func select(card: Card) -> Bool {
@@ -65,7 +66,7 @@ class Set {
             return false
         }
 
-        return true
+       // return true
 
         let card1 = selected[0]
         let card2 = selected[1]
