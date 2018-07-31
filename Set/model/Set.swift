@@ -20,7 +20,7 @@ class Set {
         }
 
         var index = 0
-        while index < 3 || index < cards.count {
+        while index < 3 && index < cards.count {
             let card = cards.removeFirst()
             cardsInPlay.append(card)
             index += 1
@@ -28,7 +28,7 @@ class Set {
     }
 
 
-    private func replace() {
+    func replace() {
         if !doFormSet() {
             return
         }
@@ -47,10 +47,12 @@ class Set {
         }
 
         if selected.count == 3 {
-            replace()
             selected = []
         }
 
+        if selected.contains(card) {
+            return false
+        }
         selected.append(card)
         return true
     }
@@ -59,6 +61,8 @@ class Set {
         if selected.count != 3 {
             return false
         }
+
+        return true
 
         let card1 = selected[0]
         let card2 = selected[1]
@@ -109,6 +113,7 @@ class Set {
         }
         self.cards.shuffle()
         cardsInPlay = Array(cards.prefix(12))
+        cards.removeFirst(12)
         selected = Array()
     }
 }
