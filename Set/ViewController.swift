@@ -14,14 +14,33 @@ class ViewController: UIViewController {
     var selected: [UIButton] = []
     var cardsForButtons: [UIButton: Card] = [:]
     @IBOutlet var cardButtons: [UIButton]!
-
+    @IBOutlet weak var newGameButton: UIButton!
     @IBOutlet weak var dealCardsButton: UIButton!
+
     @IBAction func dealMoreCards(_ sender: UIButton) {
         if cardsForButtons.count == 24 {
             return
         }
         game.dealCards()
         setupGame()
+    }
+
+    @IBAction func startNewGame(_ sender: UIButton) {
+        newGameButton.isHidden = true
+        dealCardsButton.isHidden = false
+        selected = []
+        cardsForButtons = [:]
+        game = Set()
+        setupGame()
+    }
+
+
+    func finishGame() {
+        newGameButton.isHidden = false
+        dealCardsButton.isHidden = true
+        for button in cardButtons {
+            button.isHidden = true
+        }
     }
 
     @IBAction func selectCard(_ sender: UIButton) {
@@ -57,6 +76,9 @@ class ViewController: UIViewController {
                 }
             }
         }
+        if game.cardsInPlay.count == 0 {
+            finishGame()
+        }
     }
 
     private func markAs(selected button: UIButton) {
@@ -67,6 +89,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        newGameButton.isHidden = true
         setupGame()
     }
 

@@ -27,7 +27,6 @@ class Set {
         }
     }
 
-
     func replace() {
         if !doFormSet() {
             return

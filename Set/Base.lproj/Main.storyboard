@@ -226,12 +226,21 @@
                                     <action selector="dealMoreCards:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pyV-47-78d"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIh-uj-Qhq">
+                                <rect key="frame" x="151" y="251" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="New game"/>
+                                <connections>
+                                    <action selector="startNewGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="77k-3d-tv5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="dealCardsButton" destination="ivB-VS-Vf7" id="Nkg-FY-hLZ"/>
+                        <outlet property="newGameButton" destination="IIh-uj-Qhq" id="xMf-dP-LFT"/>
                         <outletCollection property="cardButtons" destination="wFf-2Y-0BJ" collectionClass="NSMutableArray" id="stb-TI-IDL"/>
                         <outletCollection property="cardButtons" destination="e4G-9d-Zz2" collectionClass="NSMutableArray" id="ZRd-YH-RGS"/>
                         <outletCollection property="cardButtons" destination="KzE-jH-Z3x" collectionClass="NSMutableArray" id="hQg-pQ-5ae"/>
