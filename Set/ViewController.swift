@@ -17,20 +17,43 @@ class ViewController: UIViewController {
 
     @IBAction func selectCard(_ sender: UIButton) {
         if selected.count == 3 {
-            for index in selected.indices {
-                //let cardIndex
+            if !game.doFormSet(){
+                for button in selected{
+                    button.layer.borderWidth = 0.0
+                }
+                selected = []
+                markAs(selected: sender)
+            } else {
+                
+            }
+        } else {
+            if selected.contains(sender) {
+                let buttonIndex = selected.index(of: sender)!
+                selected.remove(at: buttonIndex)
+                sender.layer.borderWidth = 0.0
+                sender.layer.borderColor = UIColor.blue.cgColor
+            } else {
+                markAs(selected: sender)
+                if selected.count == 3 {
+                    for button in selected {
+                        let card = cardsForButtons[button]!
+                        game.select(card: card)
+                    }
+                }
+
+                if game.doFormSet() {
+                    for button in selected {
+                        button.layer.borderColor = UIColor.yellow.cgColor
+                    }
+                }
             }
         }
-        else if selected.contains(sender) {
-            let buttonIndex = selected.index(of: sender)!
-            selected.remove(at: buttonIndex)
-            sender.layer.borderWidth = 0.0
-            sender.layer.borderColor = UIColor.blue.cgColor
-        } else {
-            selected.append(sender)
-            sender.layer.borderWidth = 3.0
-            sender.layer.borderColor = UIColor.blue.cgColor
-        }
+    }
+
+    private func markAs(selected button: UIButton) {
+        selected.append(button)
+        button.layer.borderWidth = 3.0
+        button.layer.borderColor = UIColor.blue.cgColor
     }
 
     override func viewDidLoad() {
