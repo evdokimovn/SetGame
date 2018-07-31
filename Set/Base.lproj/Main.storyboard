@@ -210,11 +210,28 @@
                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nJQ-nD-IZE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeH-6b-Wio">
+                                <rect key="frame" x="147" y="636" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Deal 3 more"/>
+                                <connections>
+                                    <action selector="dealMoreCards:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EHg-K7-268"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivB-VS-Vf7">
+                                <rect key="frame" x="147" y="636" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Deal 3 more"/>
+                                <connections>
+                                    <action selector="dealMoreCards:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pyV-47-78d"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="dealCardsButton" destination="ivB-VS-Vf7" id="Nkg-FY-hLZ"/>
                         <outletCollection property="cardButtons" destination="wFf-2Y-0BJ" collectionClass="NSMutableArray" id="stb-TI-IDL"/>
                         <outletCollection property="cardButtons" destination="e4G-9d-Zz2" collectionClass="NSMutableArray" id="ZRd-YH-RGS"/>
                         <outletCollection property="cardButtons" destination="KzE-jH-Z3x" collectionClass="NSMutableArray" id="hQg-pQ-5ae"/>

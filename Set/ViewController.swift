@@ -15,20 +15,25 @@ class ViewController: UIViewController {
     var cardsForButtons: [UIButton: Card] = [:]
     @IBOutlet var cardButtons: [UIButton]!
 
+    @IBOutlet weak var dealCardsButton: UIButton!
+    @IBAction func dealMoreCards(_ sender: UIButton) {
+        if cardsForButtons.count == 24 {
+            return
+        }
+        game.dealCards()
+        setupGame()
+    }
+
     @IBAction func selectCard(_ sender: UIButton) {
         if selected.count == 3 {
+            for button in selected {
+                button.layer.borderWidth = 0.0
+            }
+            selected = []
             if !game.doFormSet() {
-                for button in selected {
-                    button.layer.borderWidth = 0.0
-                }
-                selected = []
                 markAs(selected: sender)
             } else {
                 game.replace()
-                for button in selected {
-                    button.layer.borderWidth = 0.0
-                }
-                selected = []
                 setupGame()
             }
         } else {
