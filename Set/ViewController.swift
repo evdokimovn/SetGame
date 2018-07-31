@@ -13,16 +13,35 @@ class ViewController: UIViewController {
     var game = Set()
     var selected: [UIButton] = []
     var cardsForButtons: [UIButton: Card] = [:]
+
     @IBOutlet var cardButtons: [UIButton]!
     @IBOutlet weak var newGameButton: UIButton!
     @IBOutlet weak var dealCardsButton: UIButton!
 
     @IBAction func dealMoreCards(_ sender: UIButton) {
-        if cardsForButtons.count == 24 {
-            return
+        if selected.count == 3 && game.doFormSet() {
+            for button in selected {
+                button.layer.borderWidth = 0.0
+            }
+            selected = []
+            game.replace()
+        } else {
+            if cardsForButtons.count == 24 {
+                return
+            }
+            game.dealCards()
         }
-        game.dealCards()
+
+
+
+
         setupGame()
+        print(cardsForButtons.count)
+        if (game.hasMoreCards() && cardsForButtons.count < 24) || (game.doFormSet() && selected.count == 3) {
+            dealCardsButton.isHidden = false
+        } else {
+            dealCardsButton.isHidden = true
+        }
     }
 
     @IBAction func startNewGame(_ sender: UIButton) {
@@ -63,21 +82,29 @@ class ViewController: UIViewController {
                 sender.layer.borderColor = UIColor.blue.cgColor
             } else {
                 markAs(selected: sender)
-                if selected.count == 3 {
-                    for button in selected {
-                        let card = cardsForButtons[button]!
-                        game.select(card: card)
-                    }
-                    if game.doFormSet() {
-                        for button in selected {
-                            button.layer.borderColor = UIColor.yellow.cgColor
-                        }
-                    }
+            }
+        }
+
+        if selected.count == 3 {
+            for button in selected {
+                let card = cardsForButtons[button]!
+                game.select(card: card)
+            }
+            if game.doFormSet() {
+                for button in selected {
+                    button.layer.borderColor = UIColor.yellow.cgColor
                 }
             }
         }
+
         if game.cardsInPlay.count == 0 {
             finishGame()
+        }
+
+        if (game.hasMoreCards() && cardsForButtons.count < 24) || (game.doFormSet() && selected.count == 3) {
+            dealCardsButton.isHidden = false
+        } else {
+            dealCardsButton.isHidden = true
         }
     }
 

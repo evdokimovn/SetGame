@@ -27,6 +27,10 @@ class Set {
         }
     }
 
+    func hasMoreCards() -> Bool {
+        return cards.count > 0
+    }
+
     func replace() {
         if !doFormSet() {
             return
