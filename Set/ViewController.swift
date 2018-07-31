@@ -17,14 +17,19 @@ class ViewController: UIViewController {
 
     @IBAction func selectCard(_ sender: UIButton) {
         if selected.count == 3 {
-            if !game.doFormSet(){
-                for button in selected{
+            if !game.doFormSet() {
+                for button in selected {
                     button.layer.borderWidth = 0.0
                 }
                 selected = []
                 markAs(selected: sender)
             } else {
-                
+                game.replace()
+                for button in selected {
+                    button.layer.borderWidth = 0.0
+                }
+                selected = []
+                setupGame()
             }
         } else {
             if selected.contains(sender) {
@@ -39,11 +44,10 @@ class ViewController: UIViewController {
                         let card = cardsForButtons[button]!
                         game.select(card: card)
                     }
-                }
-
-                if game.doFormSet() {
-                    for button in selected {
-                        button.layer.borderColor = UIColor.yellow.cgColor
+                    if game.doFormSet() {
+                        for button in selected {
+                            button.layer.borderColor = UIColor.yellow.cgColor
+                        }
                     }
                 }
             }
@@ -61,66 +65,88 @@ class ViewController: UIViewController {
         setupGame()
     }
 
-    private func display(card: Card) {
+    private func setForButton(card: Card) {
         for button in cardButtons {
             if cardsForButtons[button] == nil {
                 cardsForButtons[button] = card
-                let symbol: String = {
-                    switch card.symbol {
-                    case .Diamond:
-                        return "▲"
-                    case .Oval:
-                        return "●"
-                    case .Squiggle:
-                        return "■"
-                    }
-                }()
-
-                let color: UIColor = {
-                    switch card.color {
-                    case .Red:
-                        return UIColor.red
-                    case .Green:
-                        return UIColor.green
-                    case .Blue:
-                        return UIColor.blue
-                    }
-                }()
-
-                let shading: [NSAttributedStringKey: Any] = {
-                    switch card.shading {
-                    case .Solid:
-                        return [.foregroundColor: color]
-                    case .Striped:
-                        return [.foregroundColor: color.withAlphaComponent(CGFloat(0.25))]
-                    case .Open:
-                        return [.foregroundColor: color,
-                                .strokeWidth: 15]
-                    }
-                }()
-
-                let cardAttributedString: NSAttributedString = {
-                    switch card.number {
-                    case .One:
-                        return NSAttributedString(string: symbol, attributes: shading)
-                    case .Two:
-                        return NSAttributedString(string: symbol + symbol, attributes: shading)
-                    case .Three:
-                        return NSAttributedString(string: symbol + symbol + symbol, attributes: shading)
-                    }
-                }()
-
-                button.setAttributedTitle(cardAttributedString, for: .normal)
                 return
             }
         }
+    }
 
+    func drawCard(on button: UIButton) {
+        let card = cardsForButtons[button]!
+        let symbol: String = {
+            switch card.symbol {
+            case .Diamond:
+                return "▲"
+            case .Oval:
+                return "●"
+            case .Squiggle:
+                return "■"
+            }
+        }()
 
+        let color: UIColor = {
+            switch card.color {
+            case .Red:
+                return UIColor.red
+            case .Green:
+                return UIColor.green
+            case .Blue:
+                return UIColor.blue
+            }
+        }()
+
+        let shading: [NSAttributedStringKey: Any] = {
+            switch card.shading {
+            case .Solid:
+                return [.foregroundColor: color]
+            case .Striped:
+                return [.foregroundColor: color.withAlphaComponent(CGFloat(0.25))]
+            case .Open:
+                return [.foregroundColor: color,
+                        .strokeWidth: 15]
+            }
+        }()
+
+        let cardAttributedString: NSAttributedString = {
+            switch card.number {
+            case .One:
+                return NSAttributedString(string: symbol, attributes: shading)
+            case .Two:
+                return NSAttributedString(string: symbol + symbol, attributes: shading)
+            case .Three:
+                return NSAttributedString(string: symbol + symbol + symbol, attributes: shading)
+            }
+        }()
+
+        button.setAttributedTitle(cardAttributedString, for: .normal)
     }
 
     private func setupGame() {
+        var cards: [Card] = []
+        for (button, card) in cardsForButtons {
+            if !game.cardsInPlay.contains(card) {
+                cardsForButtons.removeValue(forKey: button)
+            } else {
+                cards.append(card)
+            }
+        }
+
         for card in game.cardsInPlay {
-            display(card: card)
+            if !cards.contains(card) {
+                setForButton(card: card)
+            }
+        }
+
+        for button in cardButtons {
+            if cardsForButtons[button] == nil {
+                button.isHidden = true
+            } else {
+                drawCard(on: button)
+                button.isHidden = false
+            }
         }
     }
 }

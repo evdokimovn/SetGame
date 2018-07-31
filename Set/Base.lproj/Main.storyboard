@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,14 +15,13 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Set" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="la0-XF-Q7X">
                                 <rect key="frame" x="44" y="20" width="46" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.90373370284229848" blue="0.96910787745873117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NNM-Xf-wzj"/>
                                 </connections>
@@ -26,8 +29,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFf-2Y-0BJ">
                                 <rect key="frame" x="164" y="20" width="46" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.90373370284229848" blue="0.96910787745873117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N69-0G-YQo"/>
                                 </connections>
@@ -35,8 +37,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4G-9d-Zz2">
                                 <rect key="frame" x="283" y="20" width="46" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.90373370284229848" blue="0.96910787745873117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cFa-8r-zd0"/>
                                 </connections>
@@ -44,8 +45,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KzE-jH-Z3x">
                                 <rect key="frame" x="45" y="97" width="46" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.90373370284229848" blue="0.96910787745873117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jAe-ki-QAg"/>
                                 </connections>
@@ -53,8 +53,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Uf-Ce-l7b">
                                 <rect key="frame" x="164" y="97" width="46" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.90373370284229848" blue="0.96910787745873117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lDv-rU-Nlv"/>
                                 </connections>
@@ -62,8 +61,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FiV-YP-6Yo">
                                 <rect key="frame" x="283" y="97" width="46" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.90373370284229848" blue="0.96910787745873117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DaZ-13-JBI"/>
                                 </connections>
@@ -71,8 +69,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33e-Z6-Mrk">
                                 <rect key="frame" x="45" y="174" width="46" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.90373370284229848" blue="0.96910787745873117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kZr-8v-l7K"/>
                                 </connections>
@@ -80,8 +77,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpU-LW-fsu">
                                 <rect key="frame" x="165" y="174" width="46" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.90373370284229848" blue="0.96910787745873117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vVR-Xv-G4P"/>
                                 </connections>
@@ -89,8 +85,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBm-Nw-6hw">
                                 <rect key="frame" x="284" y="174" width="46" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.90373370284229848" blue="0.96910787745873117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sEx-dE-qNR"/>
                                 </connections>
@@ -98,8 +93,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2J-4n-3WR">
                                 <rect key="frame" x="44" y="251" width="46" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.90373370284229848" blue="0.96910787745873117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ndd-Q3-Duk"/>
                                 </connections>
@@ -107,8 +101,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phg-66-YtL">
                                 <rect key="frame" x="164" y="251" width="46" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.90373370284229848" blue="0.96910787745873117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ARP-RF-Y3p"/>
                                 </connections>
@@ -116,10 +109,105 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMc-eX-vZW">
                                 <rect key="frame" x="283" y="251" width="46" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.90373370284229848" blue="0.96910787745873117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="juR-R4-krb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unj-X7-jnT">
+                                <rect key="frame" x="44" y="328" width="46" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sFc-4w-Ay2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlG-U0-9d4">
+                                <rect key="frame" x="164" y="328" width="46" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LBH-le-uUe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSy-V9-9hw">
+                                <rect key="frame" x="283" y="328" width="46" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FUq-FH-VnZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mof-vQ-u7Y">
+                                <rect key="frame" x="45" y="405" width="46" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YrD-8z-4Xc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dud-ru-sIj">
+                                <rect key="frame" x="164" y="405" width="46" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iuv-LZ-y62"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZa-NA-YDk">
+                                <rect key="frame" x="283" y="405" width="46" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pAi-sg-FYy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URc-Lg-33a">
+                                <rect key="frame" x="45" y="482" width="46" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Jk-y1-nZs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8U-je-2wo">
+                                <rect key="frame" x="165" y="482" width="46" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jbx-GH-cbj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03B-8W-lFY">
+                                <rect key="frame" x="284" y="482" width="46" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="amx-5d-D66"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqH-xK-qQC">
+                                <rect key="frame" x="44" y="559" width="46" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yUD-Aa-52o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuS-hT-zNE">
+                                <rect key="frame" x="164" y="559" width="46" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C2m-lA-u4e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSf-Vp-PGD">
+                                <rect key="frame" x="283" y="559" width="46" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90373370279999998" blue="0.96910787750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nJQ-nD-IZE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -139,6 +227,18 @@
                         <outletCollection property="cardButtons" destination="phg-66-YtL" collectionClass="NSMutableArray" id="Ovt-Gl-gDE"/>
                         <outletCollection property="cardButtons" destination="NMc-eX-vZW" collectionClass="NSMutableArray" id="f41-j2-rF0"/>
                         <outletCollection property="cardButtons" destination="la0-XF-Q7X" collectionClass="NSMutableArray" id="RiN-e6-Ted"/>
+                        <outletCollection property="cardButtons" destination="unj-X7-jnT" collectionClass="NSMutableArray" id="gLa-ft-RVO"/>
+                        <outletCollection property="cardButtons" destination="hlG-U0-9d4" collectionClass="NSMutableArray" id="TGf-xW-TcS"/>
+                        <outletCollection property="cardButtons" destination="OSy-V9-9hw" collectionClass="NSMutableArray" id="dNZ-Zd-JDT"/>
+                        <outletCollection property="cardButtons" destination="pZa-NA-YDk" collectionClass="NSMutableArray" id="RMi-RT-fUZ"/>
+                        <outletCollection property="cardButtons" destination="dud-ru-sIj" collectionClass="NSMutableArray" id="wBm-1O-Vc5"/>
+                        <outletCollection property="cardButtons" destination="mof-vQ-u7Y" collectionClass="NSMutableArray" id="ZnD-Fd-2Qc"/>
+                        <outletCollection property="cardButtons" destination="URc-Lg-33a" collectionClass="NSMutableArray" id="Ska-cl-euH"/>
+                        <outletCollection property="cardButtons" destination="l8U-je-2wo" collectionClass="NSMutableArray" id="NXy-A6-UA7"/>
+                        <outletCollection property="cardButtons" destination="03B-8W-lFY" collectionClass="NSMutableArray" id="IKE-fV-20S"/>
+                        <outletCollection property="cardButtons" destination="tSf-Vp-PGD" collectionClass="NSMutableArray" id="VLo-hr-OMr"/>
+                        <outletCollection property="cardButtons" destination="iuS-hT-zNE" collectionClass="NSMutableArray" id="Hzz-4g-sGy"/>
+                        <outletCollection property="cardButtons" destination="eqH-xK-qQC" collectionClass="NSMutableArray" id="Mht-Qo-wjP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
