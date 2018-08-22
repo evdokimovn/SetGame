@@ -25,9 +25,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="color" value="green"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="shape" value="two"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="shapeAdapter" value="shape"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="shapeAdapter" value="diamond"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="numberAdapter">
-                                        <integer key="value" value="2"/>
+                                        <integer key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="colorAdapter" value="red"/>
                                 </userDefinedRuntimeAttributes>

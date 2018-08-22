@@ -25,6 +25,7 @@ class SetCardView: UIView {
         case blue, red, green
     }
 
+    @IBInspectable
     private var selected = false { didSet { setNeedsDisplay() } }
     private var number: Number? { didSet { setNeedsDisplay() } }
     private var shape: Shape? { didSet { setNeedsDisplay() } }
@@ -63,6 +64,8 @@ class SetCardView: UIView {
 
     private let shapeMargin: CGFloat = 0.15
 
+    // MARK: Initializers
+
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -78,6 +81,7 @@ class SetCardView: UIView {
         self.color = color
     }
 
+    // Give num of rectangles to draw shapes on
     private func rectsToDraw(give num: Number) -> [CGRect] {
         var rects = [CGRect]()
 
@@ -104,6 +108,27 @@ class SetCardView: UIView {
         return rects
     }
 
+    private func strikeDiamond(in rect: CGRect) -> UIBezierPath {
+        let margin = min(rect.size.width, rect.size.height) * shapeMargin
+
+        let rectWithMargin = CGRect(x: rect.origin.x - (margin * 2),
+            y: rect.origin.y + margin,
+            width: rect.size.width + (margin * 4),
+            height: rect.size.height - (margin * 2))
+        
+        //let rectWithMargin = rect
+        let path = UIBezierPath()
+       // UIRectFill(rectWithMargin)
+        path.addClip()
+        path.move(to: CGPoint(x: rectWithMargin.midX, y: rectWithMargin.origin.y))
+        path.addLine(to: CGPoint(x: rectWithMargin.maxX, y: rectWithMargin.midY))
+        path.addLine(to: CGPoint(x: rectWithMargin.midX, y: rectWithMargin.maxY))
+        path.addLine(to: CGPoint(x: rectWithMargin.origin.x, y: rectWithMargin.midY))
+        path.close()
+        return path
+    }
+
+
     private func ovalPath(rect: CGRect) -> UIBezierPath {
         // To add a little margin/padding
         let margin = min(rect.size.width, rect.size.height) * shapeMargin
@@ -128,18 +153,31 @@ class SetCardView: UIView {
         }
     }
 
+
+    private func strikePath(for shape: Shape, in rect: CGRect) -> UIBezierPath {
+        switch shape {
+        case .oval:
+            return ovalPath(rect: rect)
+        case .diamond:
+            return strikeDiamond(in: rect)
+        default:
+            return UIBezierPath()
+        }
+    }
+
     override func draw(_ rect: CGRect) {
         //if let card = self.card{
 
         for r in rectsToDraw(give: number!) {
-            let path = ovalPath(rect: r)
+            let path = strikePath(for: shape!, in: r)
             let stroke = chooseStroke(for: self.color!)
+            //UIColor.yellow.setFill()
+            //UIRectFill(r)
             stroke.setStroke()
             stroke.setFill()
             path.stroke()
-            path.fill()
-            //UIColor.yellow.setFill()
-            //UIRectFill(r)
+            //path.fill()
+
         }
 
     }
