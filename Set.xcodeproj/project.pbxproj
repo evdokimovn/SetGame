@@ -14,6 +14,8 @@
 		FD2AFDC22104EE0E0049540C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD2AFDC02104EE0E0049540C /* LaunchScreen.storyboard */; };
 		FD2AFDCA2104F53E0049540C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2AFDC92104F53E0049540C /* Card.swift */; };
 		FD2FEA112104F749005058F4 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2FEA102104F749005058F4 /* Set.swift */; };
+		FDAB5D9221296878007DB4C8 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAB5D9121296878007DB4C8 /* Grid.swift */; };
+		FDAB5D94212968B8007DB4C8 /* SetCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAB5D93212968B8007DB4C8 /* SetCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		FD2AFDC32104EE0E0049540C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD2AFDC92104F53E0049540C /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		FD2FEA102104F749005058F4 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
+		FDAB5D9121296878007DB4C8 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		FDAB5D93212968B8007DB4C8 /* SetCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				FD2AFDBE2104EE0E0049540C /* Assets.xcassets */,
 				FD2AFDC02104EE0E0049540C /* LaunchScreen.storyboard */,
 				FD2AFDC32104EE0E0049540C /* Info.plist */,
+				FDAB5D9121296878007DB4C8 /* Grid.swift */,
+				FDAB5D93212968B8007DB4C8 /* SetCardView.swift */,
 			);
 			path = Set;
 			sourceTree = "<group>";
@@ -150,8 +156,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD2FEA112104F749005058F4 /* Set.swift in Sources */,
+				FDAB5D94212968B8007DB4C8 /* SetCardView.swift in Sources */,
 				FD2AFDBA2104EE0C0049540C /* ViewController.swift in Sources */,
 				FD2AFDCA2104F53E0049540C /* Card.swift in Sources */,
+				FDAB5D9221296878007DB4C8 /* Grid.swift in Sources */,
 				FD2AFDB82104EE0C0049540C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
